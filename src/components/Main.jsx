@@ -1,11 +1,10 @@
 import AllNotes from "../pages/AllNotes"
 import SingleNote from "../pages/SingleNote";
 import Form from "../pages/Form";
-import {useState, useEffect} from "react"
-import { Route, Routes, Link, useNavigate } from "react-router-dom";
+// import {useState, useEffect} from "react"
+import { Route, Routes, Link } from "react-router-dom";
 
 const Main = (props) => {
-  const targetNote = props.targetNote
   return (
     <div>
       <h1 className="Main">My Note List</h1>

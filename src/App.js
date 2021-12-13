@@ -1,6 +1,6 @@
 import './App.css';
 import {useState, useEffect} from "react"
-import { Route, Routes, Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HeaderNav from "./components/HeaderNav"
 import Main from "./components/Main"
 
