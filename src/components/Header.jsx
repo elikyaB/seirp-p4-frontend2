@@ -10,24 +10,24 @@ const Header = ({toggleBurgerMenu}) => {
       <nav className="nav">
         <ul className="nav__list">
           <Link className="nav__logo" to="/">
-            Grocery App
+            Noted!
           </Link>
 
           <li className="nav__list__item">
-            <NavLink className="nav__link" to="/shop/products">
-              Shop
+            <NavLink className="nav__link" to="/new">
+              New
             </NavLink>
           </li>
 
           <li className="nav__list__item">
-            <NavLink className="nav__link" to="/shop/cart">
-              Checkout
+            <NavLink className="nav__link" to="/random">
+              Random
             </NavLink>
           </li>
 
           <li className="nav__list__item">
-            <NavLink className="nav__link" to="/">
-              Log out
+            <NavLink className="nav__link" to="/destroy">
+              Danger!
             </NavLink>
           </li>
 

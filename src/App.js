@@ -90,7 +90,7 @@ function App() {
 
   return (
     <div className="App">
-      <HeaderNav url={url} />
+      <HeaderNav url={url} notes={notes}/>
       <Main 
         url={url}
         notes={notes}

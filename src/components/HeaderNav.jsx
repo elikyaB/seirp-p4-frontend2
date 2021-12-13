@@ -4,7 +4,7 @@ import Header from "./Header";
 // import burgermenu 
 import BurgerMenu from "./BurgerMenu";
 
-const HeaderNav =() =>{
+const HeaderNav = (props) =>{
     const [showBurgerMenu, setBurgerMenu] = useState(false);
 
     const closeBurgerMenu = () => {
@@ -18,7 +18,11 @@ const HeaderNav =() =>{
     return (
         <Fragment> 
             <Header toggleBurgerMenu={toggleBurgerMenu} />
-            <BurgerMenu isOpen={showBurgerMenu} closeBurgerMenu={closeBurgerMenu}/>
+            <BurgerMenu 
+                isOpen={showBurgerMenu} 
+                closeBurgerMenu={closeBurgerMenu}
+                notes={props.notes}
+            />
         </Fragment>
     );
 };
