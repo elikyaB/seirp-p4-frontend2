@@ -24,18 +24,20 @@ const Form = (props) => {
 
   }
 
-  return <form onSubmit={handleSubmission}>
+  return <form className="Form" onSubmit={handleSubmission}>
+    <h1>Title</h1>
     <input
       type="text"
       onChange={handleChange}
       value={formData.title}
       name="title"
-      />
+    />
+    <h2>Body</h2>
     <input
-    type="text"
-    onChange={handleChange}
-    value={formData.body}
-    name="body"
+      type="text"
+      onChange={handleChange}
+      value={formData.body}
+      name="body"
     />
     <input type="submit" value={props.buttonLabel} />
   </form>

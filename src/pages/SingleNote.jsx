@@ -13,11 +13,13 @@ const SinglePost = (props) => {
     return <div className="SingleNote">
         <h1>{note?.title}</h1>
         <h2>{note?.body}</h2>
-        <button onClick={() => props.deleteNote(note)}>Delete</button>
-        <button onClick={() => props.edit(note)}>Edit</button>
-        <Link to="/">
-            <button>Go Back</button>
-        </Link>
+        <div className="buttons">
+            <button onClick={() => props.deleteNote(note)}>Delete</button>
+            <button onClick={() => props.edit(note)}>Edit</button>
+            <Link to="/">
+                <button>Go Back</button>
+            </Link>
+        </div>
     </div>
 }
 

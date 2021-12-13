@@ -19,7 +19,7 @@ const Header = ({toggleBurgerMenu}) => {
             </NavLink>
           </li>
 
-          <li className="nav__list__item">
+          {/* <li className="nav__list__item">
             <NavLink className="nav__link" to="/random">
               Random
             </NavLink>
@@ -29,7 +29,7 @@ const Header = ({toggleBurgerMenu}) => {
             <NavLink className="nav__link" to="/destroy">
               Danger!
             </NavLink>
-          </li>
+          </li> */}
 
           <div className="nav__button" onClick={toggleBurgerMenu}>
             <div className="nav__button__component"></div>
