@@ -53,10 +53,10 @@ App
 ## Development Notes
 
 ## Random and Delere!
-These were two functions I thought would be fun to add. The random function worked well to 
+These were two functions I thought would be fun to add. The random function took a bit of tinkering with the string of window.location.href, but it was a simple matter to solve when I stopped trying to use map() as the proverbial hammer. Delere was a sort of straightforward implementation that used the list of notes that lived in state to loop through and delete them all individually.
+
+## Lorem Ipsum Form Autofill
+Definitely something I cooked up in order to test out spacing of notes more easily. In the process I also learned a few tricks regarding programmatically editing a form's state.
 
 ### Burger Menu and Modal
-While the Burger menu was built more or less following the last project, I strove to add more functionality. Firstly I used 
-
-### Git Collaboration
-The biggest lessons learned were the complications that arose from collaborating across Git. Dividing up the work seems like a massive productivity hack, but having to put code from different sources together, and pushing and pulling suggested changes across the net led to quite a few merge conflicts and a lot of thrown out code. The higher up the design hierarchy a change is, the more things it breaks.
+While the Burger menu was built more or less following the last project, I strove to add more functionality. Firstly I iterated through all notes in order to add shortcuts to any individual note for a mobile user. Then I had the thought of adding a modal popup on hover to be able to preview a note before clicking on it. That's when I discovered that there is a weird css convention preventing one from using an overflow-x: visible with an overflow-y: anything else besides auto, and vice-versa. There were some work arounds online such as [this one](https://css-tricks.com/popping-hidden-overflow/), but after tinkering with it for awhile with no luck, I figured no mobile user is going to be able to cursor hover over the burger menu anytime soon and called it a day.
