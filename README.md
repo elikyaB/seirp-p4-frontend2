@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Notare - Notes App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend for the Notare App, utilizing API from the [Masonite-Heroku backend.](https://github.com/gadgetgeek/kweb_backend)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Technologies Used
+- HTML5
+- SASS
+- React JS
+- Netlify
 
-### `npm start`
+## Router Route Table
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| Route | URL | Description |
+| ----- | --- | ----------- |
+| Index | `/` | GET all notes |
+| Create | `/new` | POST creates a new product |
+| Show | `/note/:id` | GET for one note, PUT updates a product, DELETE destroys a product |
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Components
+- HeaderNav - hosts the title banner responsive logic
+- Header - shows link to form and additional functions - get random note and delete all notes
+- BurgerMenu - pop-up navigation pane for mobile
+- Main - displays pages
+- Note - holds note information
 
-### `npm test`
+## Pages
+- AllNotes - show all the notes
+- SingleNote - shows an additional note with delete, update, and return to AllNotes button
+- Form - shows form to create new note, along with a LoremIpsum autofill button
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tree
+```
+App
+ |_____ HeaderNav
+          |______ Header / BurgerMenu
+ |_____ Main
+          |______ AllNotes
+          |______ SingleNote
+          |______ Form
+```
 
-### `npm run build`
+## User Stories
+- As a user, I can see a list of all my notes when I visit the page.
+- As a user, I can click on one of my notes and have it take me to its individual page.
+- As a user, I can create a new note and see it on the main page instantly.
+- As a user, I can update a note in case I made a typo or want to change an image.
+- As a user, I can autofill the form for a note in case I'm lazy.
+- As a user, I can delete a note so I can keep my list relevant.
+- As a user, I can delete all notes to start fresh.
+- As a mobile user, I can use the burger menu to quickly scroll through my notes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Development Notes
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Random and Delere!
+These were two functions I thought would be fun to add. The random function worked well to 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Burger Menu and Modal
+While the Burger menu was built more or less following the last project, I strove to add more functionality. Firstly I used 
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Git Collaboration
+The biggest lessons learned were the complications that arose from collaborating across Git. Dividing up the work seems like a massive productivity hack, but having to put code from different sources together, and pushing and pulling suggested changes across the net led to quite a few merge conflicts and a lot of thrown out code. The higher up the design hierarchy a change is, the more things it breaks.

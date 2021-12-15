@@ -7,31 +7,30 @@ $purple: rgb(120, 46, 155);
 // breakpoints mixins for responsive mobile/ screen styling
 @mixin breakpoint($breakpoint) {
   @if $breakpoint == phone {
-    @media only screen and (max-width: 37.5em) {
+    @media only screen and (max-width: 425px) {
       @content;
     }
   }
 
   @if $breakpoint == tablet-port {
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 768px) {
       @content;
     }
   }
 
   @if $breakpoint == tablet-land {
-    // 768px
-    @media only screen and (max-width: 75em) {
+    @media only screen and (max-width: 1024px) {
       @content;
     }
   }
 
   @if $breakpoint == lg-screen {
-    // 768px
-    @media only screen and (max-width: 112.5em) {
+    @media only screen and (max-width: 1280px) {
       @content;
     }
   }
 }
+
 //responsive styling
 *,
 *::after,
@@ -41,16 +40,15 @@ $purple: rgb(120, 46, 155);
   box-sizing: inherit;
 }
 
-body {
-  box-sizing: border-box;
-}
+body {box-sizing: border-box;}
 
 .container {
-  max-width: 114rem;
-  padding: 0 8rem;
+  max-width: 1024px;
+  padding: 0 10vw;
+  margin-top: 3vh;
 
   @include breakpoint(phone) {
-    padding: 0 2rem;
+    padding: 0 10vw;
   }
 }
 
@@ -63,15 +61,15 @@ body {
   }
 }
 
-// ---------------------------------
-// Header/ Navigation Bar
-// ---------------------------------
+// ---------------------
+// Header
+// ---------------------
 
 .nav {
   background-color: $purple;
-  padding: 2rem 4rem;
-  height: 8rem;
-  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.4);
+  padding: 3vh 6vw;
+  height: 12vh;
+  box-shadow: 0 1vh 1vh rgba(0, 0, 0, 0.4);
 
   &__list {
     display: flex;
@@ -79,7 +77,7 @@ body {
     align-items: center;
     list-style: none;
     height: 100%;
-    padding: 0 4rem;
+    padding: 0 4vw;
 
     @include breakpoint(phone) {
       padding: 0;
@@ -90,6 +88,8 @@ body {
       justify-content: center;
       align-items: center;
       font-size: 1.8rem;
+      margin-bottom: 0;
+
 
       @include breakpoint(tablet-port) {
         display: none;
@@ -144,9 +144,14 @@ body {
   }
 }
 
-// --------------------------
-// BurgerMenu / drop down
-// --------------------------
+// ---------------------
+// BurgerMenu
+// ---------------------
+// .wrapper {
+//   position: relative;
+
+//   .wrapper{position: static;}
+// }
 
 .burgermenu {
   display: none;
@@ -161,7 +166,10 @@ body {
     height: 100%;
     transition: transform 0.3s ease-out;
     background-color: #ddd;
-    padding: 4rem 2rem;
+    padding: 2vh 2vw;
+    box-shadow: 3vw 0 2vw rgba(0, 0, 0, 0.4);
+    // overflow-y: auto;
+    // overflow-x: hidden;
   }
 
   &--open {
@@ -170,49 +178,53 @@ body {
 
   &--closed {
     transform: translateX(-100%);
-  }
-
-  &__backdrop {
-    width: 30%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    background-color: #000;
-    opacity: 0.6;
+    box-shadow: none;
   }
 
   &__list {
     list-style: none;
     font-size: 2rem;
     width: 100%;
+    // :hover {.modal {display: block;}}
 
     &__item {
-      margin-bottom: 1rem;
+      margin-bottom: 2vh;
     }
   }
 
   &__link {
     display: block;
     text-decoration: none;
-    padding: 0.8rem 1.5rem;
+    padding: 2vh 2vw;
     border-radius: 0.5rem;
     background-color: $purple;
     color: white;
-    margin-top: 10%;
+    margin-top: 1vh;
     font-size: .8em;
   }
+
+  // .modal {
+  //   display: none;
+  //   position: absolute;
+  //   width: 50vw;
+  //   z-index: 250;
+  //   left: 50%;
+  //   top: 50%;
+  //   height: 5vw;
+  //   overflow-x: visible;
+  // }
 }
 
+// ---------------------
+// Main / Other
+// ---------------------
+
 .invert {color: $purple; background-color: white}
+
 .SingleNote {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  // align-items: center;
-  // justify-content: center;
-  // justify-items: center;
   width: 70vw;
   .buttons {
     display: flex;
@@ -221,3 +233,12 @@ body {
   }
 }
 
+.Form {
+  .FormBody {
+    height: 30vh;
+    width: 100%;
+  }
+  .FormBtns * {
+    margin: 1vh 1vw;
+  }
+}

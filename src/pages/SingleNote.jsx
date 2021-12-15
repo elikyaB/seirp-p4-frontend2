@@ -7,8 +7,8 @@ const SinglePost = (props) => {
     const id = parseInt(params.id)
 
     // find the particular post the user wants to see based on the param
-    const note = props.notes.find((p) => p.id === id)
-    console.log(note)
+    const note = props.notes.find((n) => n.id === id)
+    // console.log(note)
 
     return <div className="SingleNote">
         <h1>{note?.title}</h1>

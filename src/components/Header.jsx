@@ -1,16 +1,14 @@
 import { React } from "react";
 import { NavLink, Link } from "react-router-dom";
 
+const Header = (props) => {
 
-
-const Header = ({toggleBurgerMenu}) => {
-  
   return (
     <header className="header">
       <nav className="nav">
         <ul className="nav__list">
           <Link className="nav__logo" to="/">
-            Noted!
+            Notare!
           </Link>
 
           <li className="nav__list__item">
@@ -19,19 +17,19 @@ const Header = ({toggleBurgerMenu}) => {
             </NavLink>
           </li>
 
-          {/* <li className="nav__list__item">
-            <NavLink className="nav__link" to="/random">
+          <li className="nav__list__item">
+            <NavLink className="nav__link" to={props.randomNote()} >
               Random
             </NavLink>
           </li>
 
           <li className="nav__list__item">
-            <NavLink className="nav__link" to="/destroy">
-              Danger!
-            </NavLink>
-          </li> */}
+            <div className="nav__link" onClick={props.destroyAll}>
+              Delere!
+            </div>
+          </li>
 
-          <div className="nav__button" onClick={toggleBurgerMenu}>
+          <div className="nav__button" onClick={props.toggleBurgerMenu}>
             <div className="nav__button__component"></div>
             <div className="nav__button__component"></div>
             <div className="nav__button__component"></div>

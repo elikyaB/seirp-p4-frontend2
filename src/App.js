@@ -27,25 +27,21 @@ function App() {
   // Functions
   //////////////
   const getNotes = async () => {
-    const response = fetch(url)
-    const data = await (await response).json()
+    const response = await fetch(url)
+    const data = await response.json()
     setNotes(data)
   }
 
   // function to add notes
   const addNotes = async (newNote) => {
-    const response = await fetch(url, {
+    await fetch(url, {
       method: "post",
-      headers: {
-        "Content-Type": "application/json"
-      },
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify(newNote)
-    })
-
-    console.log(response)
-    //update the list of notes
-    getNotes()
-  };
+    }).then(
+      //update the list of notes
+      getNotes()
+  )};
 
   // to select a note to edit
   const getTargetNote = (note) => {
@@ -57,9 +53,7 @@ function App() {
   const updateNote = async (note) => {
     await fetch(url + note.id, {
       method: "put",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: {"Content-Type": "application/json"},
       body: JSON.stringify(note),
     });
 
@@ -76,13 +70,29 @@ function App() {
     navigate('/')
   }
 
+  const deleteAll = () => {
+    notes.map((note) => {return deleteNote(note)})
+    navigate('/')
+  }
+
+  const randomNote = () => {
+    const noteIds = notes.map((note) => {return note.id})
+    const page = window.location.href
+    const pageNum = parseInt(page.slice(page.lastIndexOf('/')+1))
+    const allOtherNotes = noteIds.filter((noteId) => {
+      return noteId !== pageNum
+    })
+    const i = Math.floor(Math.random()*allOtherNotes.length)
+    return `/note/${allOtherNotes[i]}`
+  }
+
   //////////////
   // useEffects
   //////////////
 
   useEffect(() => {
     getNotes()
-  }, [])
+  })
 
   //////////////////////////
   // Returned JSX
@@ -90,17 +100,24 @@ function App() {
 
   return (
     <div className="App">
-      <HeaderNav url={url} notes={notes}/>
-      <Main 
-        url={url}
-        notes={notes}
-        getTargetNote={getTargetNote}
-        deleteNote={deleteNote}
-        nullNote={nullNote}
-        addNotes={addNotes}
-        targetNote={targetNote}
-        updateNote={updateNote}
+      <HeaderNav 
+        url={url} 
+        notes={notes} 
+        deleteAll={deleteAll}
+        randomNote={randomNote}
       />
+      <div className="container">
+        <Main 
+          url={url}
+          notes={notes}
+          getTargetNote={getTargetNote}
+          deleteNote={deleteNote}
+          nullNote={nullNote}
+          addNotes={addNotes}
+          targetNote={targetNote}
+          updateNote={updateNote}
+        />
+      </div>
     </div>
   );
 }

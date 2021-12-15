@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom"
+import { loremIpsum } from "lorem-ipsum"
 
 const Form = (props) => {
 
@@ -10,6 +11,7 @@ const Form = (props) => {
 
   // Handle Change to Update State when Input changes
   const handleChange = (event) => {
+    // console.log(event.target.name, event.target.value)
     setFormData({...formData, [event.target.name]: event.target.value})
   }
 
@@ -21,7 +23,15 @@ const Form = (props) => {
     props.handleSubmit(formData)
     //push user back to main page
     navigate("/")
+  }
 
+  // AutoFill for form body
+  const autoFill = (event) => {
+    event.preventDefault()
+    console.log(loremIpsum())
+    setFormData({...formData, 
+      body: formData.body+" "+loremIpsum()
+    })
   }
 
   return <form className="Form" onSubmit={handleSubmission}>
@@ -33,13 +43,18 @@ const Form = (props) => {
       name="title"
     />
     <h2>Body</h2>
-    <input
-      type="text"
+    <textarea className="FormBody"
+      type="textarea"
       onChange={handleChange}
       value={formData.body}
       name="body"
+      rows="4"
     />
-    <input type="submit" value={props.buttonLabel} />
+    <br/>
+    <div className="FormBtns">
+      <input type="submit" value={props.buttonLabel} />
+      <input type="button" value="Autofill" onClick={autoFill}/>
+    </div>
   </form>
 };
 
