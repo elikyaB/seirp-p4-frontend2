@@ -24,7 +24,7 @@ const Header = (props) => {
           </li>
 
           <li className="nav__list__item">
-            <div className="nav__link" onClick={props.destroyAll}>
+            <div className="nav__link" onClick={props.deleteAll}>
               Delere!
             </div>
           </li>

@@ -28,7 +28,6 @@ const Form = (props) => {
   // AutoFill for form body
   const autoFill = (event) => {
     event.preventDefault()
-    console.log(loremIpsum())
     setFormData({...formData, 
       body: formData.body+" "+loremIpsum()
     })

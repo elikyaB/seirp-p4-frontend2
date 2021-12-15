@@ -82,8 +82,12 @@ function App() {
     const allOtherNotes = noteIds.filter((noteId) => {
       return noteId !== pageNum
     })
-    const i = Math.floor(Math.random()*allOtherNotes.length)
-    return `/note/${allOtherNotes[i]}`
+    if (allOtherNotes.length > 0) {
+      const i = Math.floor(Math.random()*allOtherNotes.length)
+      return `/note/${allOtherNotes[i]}`
+    } else {
+      return `/`
+    }
   }
 
   //////////////

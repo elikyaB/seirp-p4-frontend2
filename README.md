@@ -48,12 +48,13 @@ App
 - As a user, I can autofill the form for a note in case I'm lazy.
 - As a user, I can delete a note so I can keep my list relevant.
 - As a user, I can delete all notes to start fresh.
+- As a user, I can click a button to go to a random note.
 - As a mobile user, I can use the burger menu to quickly scroll through my notes.
 
 ## Development Notes
 
 ## Random and Delere!
-These were two functions I thought would be fun to add. The random function took a bit of tinkering with the string of window.location.href, but it was a simple matter to solve when I stopped trying to use map() as the proverbial hammer. Delere was a sort of straightforward implementation that used the list of notes that lived in state to loop through and delete them all individually.
+These were two functions I thought would be fun to add. The random function took a bit of tinkering with the string of window.location.href, but it was a simple matter to solve when I stopped trying to use map() as the proverbial hammer. I also had to deal with the edge case of whether there were no other notes to route to, in which case it directs the user back to the main page. Delere was a sort of straightforward implementation that used the list of notes that lived in state to loop through and delete them all individually.
 
 ## Lorem Ipsum Form Autofill
 Definitely something I cooked up in order to test out spacing of notes more easily. In the process I also learned a few tricks regarding programmatically editing a form's state.
