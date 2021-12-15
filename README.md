@@ -1,6 +1,6 @@
 # Notare - Notes App
 
-This is the frontend for the Notare App, utilizing API from the [Masonite-Heroku backend.](https://github.com/gadgetgeek/kweb_backend)
+This is the frontend for the Notare App, utilizing API from the [Masonite-Heroku backend.](https://github.com/elikyaB/seirp-p4-backend2d)
 
 
 ## Technologies Used
