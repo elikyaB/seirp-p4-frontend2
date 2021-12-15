@@ -14,8 +14,10 @@ This is the frontend for the Notare App, utilizing API from the [Masonite-Heroku
 | Route | URL | Description |
 | ----- | --- | ----------- |
 | Index | `/` | GET all notes |
-| Create | `/new` | POST creates a new product |
-| Show | `/note/:id` | GET for one note, PUT updates a product, DELETE destroys a product |
+| Create | `/new` | POST creates a new note |
+| Update | `/note/:id` | PUT updates a note |
+| Destroy | `/note/:id` | DELETE destroys a note
+| Show | `/note/:id` | GET for one note |
 
 ## Components
 - HeaderNav - hosts the title banner responsive logic
